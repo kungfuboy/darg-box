@@ -190,19 +190,13 @@ class App extends Component {
         )
       } else {
         return (
-          <div
-            key={key}
-            class="bg"
-            className={hash.get(data.type)}
-            style={{ backgroundImage: `url(${imgUrl(data.children.mid)})` }}
-          >
+          <div key={key} class="bg" className={hash.get(data.type)}>
             {renderRect(key)}
-            {/* {data.children.mid} */}
+            {data.children.mid}
           </div>
         )
       }
     }
-    const imgUrl = name => require(`./assets/img-${name}.png`)
     return (
       <div className="App">
         <aside className="aside">
@@ -212,9 +206,8 @@ class App extends Component {
               key={item.mid}
               draggable="true"
               onDragStart={() => this.handleDragStartInSideChart(index)}
-              style={{ backgroundImage: `url(${imgUrl(item.mid)})` }}
             >
-              {/* {item.mid} */}
+              {item.mid}
             </div>
           ))}
         </aside>
